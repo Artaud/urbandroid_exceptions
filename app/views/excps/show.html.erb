@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Excp -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Excp %></h1>
+</div>
 
-<p>
-  <strong>Fixed:</strong>
-  <%= @excp.fixed %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:fixed) %></dt>
+      <dd><pre class="prettyprint"><%= @excp.fixed %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:date_fixed) %></dt>
+      <dd><pre class="prettyprint"><%= @excp.date_fixed %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:excp_thread) %></dt>
+      <dd><pre class="prettyprint"><%= @excp.excp_thread %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:excp_trace) %></dt>
+      <dd><pre class="prettyprint"><%= @excp.excp_trace %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:notes) %></dt>
+      <dd><pre class="prettyprint"><%= @excp.notes %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Date fixed:</strong>
-  <%= @excp.date_fixed %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              excps_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_excp_path(@excp), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              excp_path(@excp),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Excp thread:</strong>
-  <%= @excp.excp_thread %>
-</p>
-
-<p>
-  <strong>Excp trace:</strong>
-  <%= @excp.excp_trace %>
-</p>
-
-<p>
-  <strong>Notes:</strong>
-  <%= @excp.notes %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @excp.user %>
-</p>
-
-<%= link_to 'Edit', edit_excp_path(@excp) %> |
-<%= link_to 'Back', excps_path %>

@@ -1,35 +1,44 @@
-<h1>Listing excps</h1>
-
-<table>
+<%- model_class = Excp -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Excp %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Fixed</th>
-      <th>Date fixed</th>
-      <th>Excp thread</th>
-      <th>Excp trace</th>
-      <th>Notes</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:fixed) %></th>
+      <th><%= model_class.human_attribute_name(:date_fixed) %></th>
+      <th><%= model_class.human_attribute_name(:excp_thread) %></th>
+      <th><%= model_class.human_attribute_name(:excp_trace) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @excps.each do |excp| %>
       <tr>
+        <td><%= excp.id %></td>
         <td><%= excp.fixed %></td>
         <td><%= excp.date_fixed %></td>
         <td><%= excp.excp_thread %></td>
         <td><%= excp.excp_trace %></td>
         <td><%= excp.notes %></td>
-        <td><%= excp.user %></td>
-        <td><%= link_to 'Show', excp %></td>
-        <td><%= link_to 'Edit', edit_excp_path(excp) %></td>
-        <td><%= link_to 'Destroy', excp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l excp.created_at, format: :long %></td>
+        <td>
+          <%= link_to excp_path(excp), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to excp_path(excp), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Excp', new_excp_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_excp_path,
+            :class => 'btn btn-primary' %>
