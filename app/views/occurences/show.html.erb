@@ -1,39 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Occurence -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Occurence %></h1>
+</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @occurence.date %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:date) %></dt>
+      <dd><pre class="prettyprint"><%= @occurence.date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:device_brand) %></dt>
+      <dd><pre class="prettyprint"><%= @occurence.device_brand %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:device_model) %></dt>
+      <dd><pre class="prettyprint"><%= @occurence.device_model %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:operation_system_version) %></dt>
+      <dd><pre class="prettyprint"><%= @occurence.operation_system_version %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:app_version) %></dt>
+      <dd><pre class="prettyprint"><%= @occurence.app_version %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Device brand:</strong>
-  <%= @occurence.device_brand %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              occurences_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_occurence_path(@occurence), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              occurence_path(@occurence),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Device model:</strong>
-  <%= @occurence.device_model %>
-</p>
-
-<p>
-  <strong>Operation system version:</strong>
-  <%= @occurence.operation_system_version %>
-</p>
-
-<p>
-  <strong>App version:</strong>
-  <%= @occurence.app_version %>
-</p>
-
-<p>
-  <strong>Assertion:</strong>
-  <%= @occurence.assertion %>
-</p>
-
-<p>
-  <strong>Excp:</strong>
-  <%= @occurence.excp %>
-</p>
-
-<%= link_to 'Edit', edit_occurence_path(@occurence) %> |
-<%= link_to 'Back', occurences_path %>
