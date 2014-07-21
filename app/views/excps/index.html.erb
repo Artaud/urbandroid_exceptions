@@ -1,0 +1,35 @@
+<h1>Listing excps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fixed</th>
+      <th>Date fixed</th>
+      <th>Excp thread</th>
+      <th>Excp trace</th>
+      <th>Notes</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @excps.each do |excp| %>
+      <tr>
+        <td><%= excp.fixed %></td>
+        <td><%= excp.date_fixed %></td>
+        <td><%= excp.excp_thread %></td>
+        <td><%= excp.excp_trace %></td>
+        <td><%= excp.notes %></td>
+        <td><%= excp.user %></td>
+        <td><%= link_to 'Show', excp %></td>
+        <td><%= link_to 'Edit', edit_excp_path(excp) %></td>
+        <td><%= link_to 'Destroy', excp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Excp', new_excp_path %>

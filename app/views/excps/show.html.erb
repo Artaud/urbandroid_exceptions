@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fixed:</strong>
+  <%= @excp.fixed %>
+</p>
+
+<p>
+  <strong>Date fixed:</strong>
+  <%= @excp.date_fixed %>
+</p>
+
+<p>
+  <strong>Excp thread:</strong>
+  <%= @excp.excp_thread %>
+</p>
+
+<p>
+  <strong>Excp trace:</strong>
+  <%= @excp.excp_trace %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @excp.notes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @excp.user %>
+</p>
+
+<%= link_to 'Edit', edit_excp_path(@excp) %> |
+<%= link_to 'Back', excps_path %>
