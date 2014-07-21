@@ -29,6 +29,7 @@ class ExcpsController < ApplicationController
   # POST /excps.json
   def create
     @excp = Excp.new(excp_params)
+    @excp.user = current_user
 
     respond_to do |format|
       if @excp.save
