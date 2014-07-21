@@ -1,0 +1,29 @@
+<h1>Listing assertions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Notes</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assertions.each do |assertion| %>
+      <tr>
+        <td><%= assertion.description %></td>
+        <td><%= assertion.notes %></td>
+        <td><%= assertion.user %></td>
+        <td><%= link_to 'Show', assertion %></td>
+        <td><%= link_to 'Edit', edit_assertion_path(assertion) %></td>
+        <td><%= link_to 'Destroy', assertion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assertion', new_assertion_path %>

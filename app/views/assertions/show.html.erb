@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @assertion.description %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @assertion.notes %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @assertion.user %>
+</p>
+
+<%= link_to 'Edit', edit_assertion_path(@assertion) %> |
+<%= link_to 'Back', assertions_path %>
