@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-07-21
+  device_brand: MyString
+  device_model: MyString
+  operation_system_version: MyString
+  app_version: MyString
+  assertion_id: 
+  excp_id: 
+
+two:
+  date: 2014-07-21
+  device_brand: MyString
+  device_model: MyString
+  operation_system_version: MyString
+  app_version: MyString
+  assertion_id: 
+  excp_id: 
