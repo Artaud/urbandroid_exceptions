@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fixed: false
+  date_fixed: 2014-07-21
+  excp_thread: MyString
+  excp_trace: MyText
+  notes: MyText
+  user_id: 
+
+two:
+  fixed: false
+  date_fixed: 2014-07-21
+  excp_thread: MyString
+  excp_trace: MyText
+  notes: MyText
+  user_id: 
