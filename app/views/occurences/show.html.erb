@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @occurence.date %>
+</p>
+
+<p>
+  <strong>Device brand:</strong>
+  <%= @occurence.device_brand %>
+</p>
+
+<p>
+  <strong>Device model:</strong>
+  <%= @occurence.device_model %>
+</p>
+
+<p>
+  <strong>Operation system version:</strong>
+  <%= @occurence.operation_system_version %>
+</p>
+
+<p>
+  <strong>App version:</strong>
+  <%= @occurence.app_version %>
+</p>
+
+<p>
+  <strong>Assertion:</strong>
+  <%= @occurence.assertion %>
+</p>
+
+<p>
+  <strong>Excp:</strong>
+  <%= @occurence.excp %>
+</p>
+
+<%= link_to 'Edit', edit_occurence_path(@occurence) %> |
+<%= link_to 'Back', occurences_path %>
