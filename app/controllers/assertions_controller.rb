@@ -29,6 +29,7 @@ class AssertionsController < ApplicationController
   # POST /assertions.json
   def create
     @assertion = Assertion.new(assertion_params)
+    @assertion.user = current_user
 
     respond_to do |format|
       if @assertion.save
