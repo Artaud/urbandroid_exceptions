@@ -1,8 +1,8 @@
 <%- model_class = Excp -%>
 <div class="page-header">
-  <h1>:: exceptions</h1>
+  <h1><%=t '.title', :default => Excp %></h1>
 </div>
-<table class="table table-striped" id='excps'>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>ID</th>
@@ -26,9 +26,12 @@
         <td><%= excp.notes %></td>
         <td><%=l excp.created_at, format: :long %></td>
         <td>
-          <%= link_to 'show' excp_path(excp), :class => 'btn btn-xs'%>
-
-          <%= link_to 'delete' excp_path(excp), :method => :delete, :class => 'btn btn-xs' %>
+          <%= link_to excp_path(excp), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to excp_path(excp), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
           <%- end -%>
         </td>
       </tr>

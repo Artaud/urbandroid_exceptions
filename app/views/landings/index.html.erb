@@ -1,41 +1,21 @@
-<h1>Landings#index</h1>
-<p>Find me in app/views/landings/index.html.erb</p>
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<h1>Sleep as Android :: exception tracking</h1>
+	</div>
+</div>
 
 <% if signed_in? %>
 
-<table id='excps'>
-	<thead>
-		<tr>
-			<th>fixed?</th>
-			<th>date fixed</th>
-			<th>thread</th>
-			<th>trace</th>
-			<th>notes</th>
-			<th>times occured</th>
-			<th>latest occur. date</th>
-			<th>latest occur. release</th>
-			<th>show</th>
-			<th>edit</th>
-			<th>delete</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</tbody>
-</table>
+<br>
+<br>
 
-<
+<div class="row">
+	<div class="col-md-2 col-md-offset-4">
+		<%= link_to 'Exceptions', excps_path, :class => 'btn btn-lg btn-primary' %>
+	</div>
+	<div class="col-md-2"> 
+		<%= link_to 'Assertions', assertions_path, :class => 'btn btn-lg btn-primary' %> 
+	</div>
+</div>
 
 <% end %>
