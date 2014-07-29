@@ -34,7 +34,7 @@
           <td><%= Occurence.where(assertion_id: assertion.id).count %></td>
           <td><%= Occurence.where(assertion_id: assertion.id).order(date: :desc).first.date.to_s + ', build ' +
             Occurence.where(assertion_id: assertion.id).order(date: :desc).first.app_version %></td>
-            <td><%= link_to 'Add occurence', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-warning' %></td>
+            <td><%= link_to 'Add occurence', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-info' %></td>
             <td><%= link_to 'Show', assertion %></td>
             <td><%= link_to 'Edit', edit_assertion_path(assertion) %></td>
             <td><%= link_to 'Destroy', assertion, method: :delete, data: { confirm: 'Are you sure?' } %></td>

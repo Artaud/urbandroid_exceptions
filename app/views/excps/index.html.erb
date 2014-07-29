@@ -40,7 +40,7 @@
           <td><%= Occurence.where(excp_id: excp.id).count %></td>
           <td><%= Occurence.where(excp_id: excp.id).order(date: :desc).first.date.to_s + ', build ' +
             Occurence.where(excp_id: excp.id).order(date: :desc).first.app_version %></td>
-            <td><%= link_to 'Add occurence', new_occurence_path(:excp_id => excp.id) %></td>
+            <td><%= link_to 'Add occurence', new_occurence_path(:excp_id => excp.id), :class=>'btn btn-info' %></td>
             <td><%= link_to 'Show', excp %></td>
             <td><%= link_to 'Edit', edit_excp_path(excp) %></td>
             <td><%= link_to 'Destroy', excp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
