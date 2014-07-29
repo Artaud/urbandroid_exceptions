@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 tab = ->
-        $('#excps').dataTable
+        $('#extab').dataTable
 	        bStateSave: true
 
 $(document).ready(tab)

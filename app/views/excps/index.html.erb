@@ -1,41 +1,54 @@
-<%- model_class = Excp -%>
 <div class="page-header">
-  <h1>:: exceptions</h1>
+  <h3>sleep as android exceptions</h3>
 </div>
-<table class="table table-striped" id='excps'>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th><%= model_class.human_attribute_name(:fixed) %></th>
-      <th><%= model_class.human_attribute_name(:date_fixed) %></th>
-      <th><%= model_class.human_attribute_name(:excp_thread) %></th>
-      <th><%= model_class.human_attribute_name(:excp_trace) %></th>
-      <th><%= model_class.human_attribute_name(:notes) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @excps.each do |excp| %>
-      <tr>
-        <td><%= excp.id %></td>
-        <td><%= excp.fixed %></td>
-        <td><%= excp.date_fixed %></td>
-        <td><%= excp.excp_thread %></td>
-        <td><%= excp.excp_trace %></td>
-        <td><%= excp.notes %></td>
-        <td><%=l excp.created_at, format: :long %></td>
-        <td>
-          <%= link_to 'show' excp_path(excp), :class => 'btn btn-xs'%>
 
-          <%= link_to 'delete' excp_path(excp), :method => :delete, :class => 'btn btn-xs' %>
-          <%- end -%>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+    <%= link_to 'Insert new exception', new_excp_path, :class=>'btn btn-primary' %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <br>
+    <table class="table table-striped" id='extab'>
+      <thead>
+        <tr>
+          <th>Fixed?</th>
+          <th>Date fixed</th>
+          <th>Exception thread</th>
+          <th>Exception trace</th>
+          <th>Notes</th>
+          <th>User</th>
+          <th>Number of occurences</th>
+          <th>Last occurence</th>
+          <th>Add occurence</th>
+          <th>Show</th>
+          <th>Edit</th>
+          <th>Destroy</th>
+        </tr>
+      </thead>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_excp_path,
-            :class => 'btn btn-primary' %>
+      <tbody>
+        <% @excps.each do |excp| %>
+        <tr>
+          <td><%= excp.fixed %></td>
+          <td><%= excp.date_fixed %></td>
+          <td><%= excp.excp_thread %></td>
+          <td><%= excp.excp_trace %></td>
+          <td><%= excp.notes %></td>
+          <td><%= excp.user.username %></td>
+          <td><%= Occurence.where(excp_id: excp.id).count %></td>
+          <td><%= Occurence.where(excp_id: excp.id).order(date: :desc).first.date.to_s + ', build ' +
+            Occurence.where(excp_id: excp.id).order(date: :desc).first.app_version %></td>
+            <td><%= link_to 'Add occurence', new_occurence_path(:excp_id => excp.id) %></td>
+            <td><%= link_to 'Show', excp %></td>
+            <td><%= link_to 'Edit', edit_excp_path(excp) %></td>
+            <td><%= link_to 'Destroy', excp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <br>
