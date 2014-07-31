@@ -60,3 +60,6 @@ gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
 gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
+
+#new relic for heroku
+gem 'newrelic_rpm'

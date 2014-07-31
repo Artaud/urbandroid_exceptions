@@ -35,10 +35,40 @@
           <td><%= Occurence.where(assertion_id: assertion.id).order(date: :desc).first.date.to_s + ', build ' +
             Occurence.where(assertion_id: assertion.id).order(date: :desc).first.app_version %></td>
             <td><%= link_to 'Add occurence', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-info' %></td>
-            <td><%= link_to 'Show', assertion %></td>
+            <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= assertion.id %>">Show</button></td>
             <td><%= link_to 'Edit', edit_assertion_path(assertion) %></td>
             <td><%= link_to 'Destroy', assertion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal_<%= excp.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><%= assertion.description %></h4>
+                </div>
+                <div class="modal-body">
+                  <% Occurence.where(assertion_id: assertion.id).each do |occr| %>
+                  <ul>
+                    <li>
+                      <%= occr.date %>
+                      <%= occr.device_brand %>
+                      <%= occr.device_model %>
+                      <%= occr.operation_system_version %>
+                      <%= occr.app_version %>
+                    </li>
+                  </ul>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <% end %>
         </tbody>
       </table>
