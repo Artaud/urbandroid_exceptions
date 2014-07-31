@@ -1,14 +1,14 @@
 <%= form_for @excp, :html => { :class => 'form-horizontal form-model' } do |f| %>
   <div class="form-group">
     <%= f.label :fixed, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
+    <div class="col-md-1">
       <%= f.check_box :fixed, :class => 'text-field form-control' %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :date_fixed, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.date_select :date_fixed, :class => 'text-field form-control' %>
+      <%= f.date_select :date_fixed, :include_blank => true, :class => 'text-field form-control' %>
     </div>
   </div>
   <div class="form-group">
