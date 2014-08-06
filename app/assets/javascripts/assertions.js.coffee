@@ -5,6 +5,22 @@
 tab = ->
         $('#assertions').dataTable
 	        bStateSave: true
+	        bAutoWidth: false
+	        aoColumns: [
+	        	{sWidth: '20%', sClass: 'wordwrap'},
+	        	{sWidth: '20%', sClass: 'wordwrap'},
+	        	{sWidth: '4%'},
+	        	{sWidth: '2%'},
+	        	{sWidth: null, sClass: 'wordwrap'},
+	        	{sWidth: null},
+	        	{sWidth: null},
+	        	{sWidth: null},
+	        	{sWidth: null}
+	        ]
+	        sLengthMenu: '<select>'+
+	        	'<option value="10">10</option>'+
+	        	'</select> radku'
 
 $(document).ready(tab)
 $(document).on('page:load', tab)
+

@@ -8,14 +8,14 @@ tab = ->
 	        bAutoWidth: false
 	        sScrollX: '100%'
 	        aoColumns: [
-	        	{sWidth: null},
-	        	{sWidth: null},
+	        	{sWidth: '3%'},
+	        	{sWidth: null, sClass: 'wordwrap'},
 	        	{sWidth: null},
 	        	{sWidth: '20%', sClass: 'wordwrap'},
-	        	{sWidth: '20%'},
+	        	{sWidth: '20%', sClass: 'wordwrap'},
 	        	{sWidth: null},
-	        	{sWidth: null},
-	        	{sWidth: null},
+	        	{sWidth: '2%'},
+	        	{sWidth: null, sClass: 'wordwrap'},
 	        	{sWidth: null},
 	        	{sWidth: null},
 	        	{sWidth: null},
