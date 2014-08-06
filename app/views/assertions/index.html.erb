@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <br>
-    <table class="table table-striped" id='assertions'>
+    <table class="table table-striped display" id='assertions'>
       <thead>
         <tr>
           <th>Description</th>
@@ -39,7 +39,7 @@
             Occurence.where(assertion_id: assertion.id).order(date: :desc).first.app_version %>
             <% end %>
           </td>
-          <td><%= link_to 'Add occurence', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-info' %></td>
+          <td><%= link_to 'Add', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-info' %></td>
           <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= assertion.id %>">Show</button></td>
           <td><%= link_to 'Edit', edit_assertion_path(assertion) %></td>
           <td><%= link_to 'Destroy', assertion, method: :delete, data: { confirm: 'Are you sure?' } %></td>

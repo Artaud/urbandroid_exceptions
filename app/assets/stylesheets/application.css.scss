@@ -22,17 +22,21 @@
 
 // Give everything in 'yield' margin to separate it.
 .yield {
-  margin: 30px;
+	margin: 30px;
 }
 
 // Constrain forms for models (scaffolded models) so they aren't full page width.
 .form-model {
-  max-width: 750px;
+	max-width: 750px;
 }
 
 //->Prelang (user_login:devise)
 .form-user {
-  max-width: 450px;
+	max-width: 450px;
+}
+
+.wordwrap {
+	word-wrap: break-word;
 }
 
 // Custom css
@@ -43,4 +47,9 @@ body {
 
 th {
 	text-align: center;
+}
+
+table {
+	width: 100%;
+	table-layout: fixed
 }

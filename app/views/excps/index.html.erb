@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <br>
-    <table class="table table-striped" id='extab'>
+    <table class="table table-striped display" id='extab' >
       <thead>
         <tr>
           <th>Fixed?</th>
@@ -45,7 +45,7 @@
             Occurence.where(excp_id: excp.id).order(date: :desc).first.app_version %>
             <% end %>
           </td>
-          <td><%= link_to 'Add occurence', new_occurence_path(:excp_id => excp.id), :class=>'btn btn-info' %></td>
+          <td><%= link_to 'Add', new_occurence_path(:excp_id => excp.id), :class=>'btn btn-info' %></td>
           <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= excp.id %>">Show</button></td>
           <td><%= link_to 'Edit', edit_excp_path(excp) %></td>
           <td><%= link_to 'Destroy', excp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
