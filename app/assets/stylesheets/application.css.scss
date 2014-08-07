@@ -18,6 +18,8 @@
 
 @import "bootstrap";
 
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
+
 //->Prelang (ui_framework:twitter_bootstrap)
 
 // Give everything in 'yield' margin to separate it.
@@ -46,6 +48,10 @@ body {
 }
 
 th {
+	text-align: center;
+}
+
+td {
 	text-align: center;
 }
 

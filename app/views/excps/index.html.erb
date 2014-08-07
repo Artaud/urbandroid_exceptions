@@ -12,28 +12,28 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <br>
-    <table class="table table-striped display" id='extab' >
+    <table class="table table-striped table-bordered display" id='extab' >
       <thead>
         <tr>
-          <th>Fixed?</th>
+          <th>Fix?</th>
           <th>Date fixed</th>
-          <th>Exception thread</th>
-          <th>Exception trace</th>
+          <th>Excp thread</th>
+          <th>Excp trace</th>
           <th>Notes</th>
           <th>User</th>
           <th>Count</th>
           <th>Last</th>
-          <th>Add occurence</th>
-          <th>Show</th>
-          <th>Edit</th>
-          <th>Destroy</th>
+          <th>Add occur</th>
+          <th>Show occur's</th>
+          <th>Edit excp</th>
+          <th>Destroy excp</th>
         </tr>
       </thead>
 
       <tbody>
         <% @excps.each do |excp| %>
         <tr>
-          <td><%= excp.fixed %></td>
+          <td><%= excp.fixed ? "\u2713" : "\u2718" %></td>
           <td><%= excp.date_fixed %></td>
           <td><%= excp.excp_thread %></td>
           <td><%= excp.excp_trace %></td>
@@ -45,10 +45,13 @@
             Occurence.where(excp_id: excp.id).order(date: :desc).first.app_version %>
             <% end %>
           </td>
-          <td><%= link_to 'Add', new_occurence_path(:excp_id => excp.id), :class=>'btn btn-info' %></td>
-          <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= excp.id %>">Show</button></td>
-          <td><%= link_to 'Edit', edit_excp_path(excp) %></td>
-          <td><%= link_to 'Destroy', excp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '+', new_occurence_path(:excp_id => excp.id), :class=>'btn btn-primary' %></td>
+          <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= excp.id %>">OO</button></td>
+          <td><%= link_to edit_excp_path(excp), class: "btn btn-warning" do %>
+            ✎
+            <% end %>
+          </td>
+          <td><%= link_to "×", excp, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
 
         <!-- Modal -->

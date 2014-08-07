@@ -6,20 +6,19 @@ tab = ->
         $('#extab').dataTable
 	        bStateSave: false
 	        bAutoWidth: false
-	        sScrollX: '100%'
 	        aoColumns: [
 	        	{sWidth: '3%'},
 	        	{sWidth: null, sClass: 'wordwrap'},
-	        	{sWidth: null},
+	        	{sWidth: '5%'},
 	        	{sWidth: '20%', sClass: 'wordwrap'},
-	        	{sWidth: '20%', sClass: 'wordwrap'},
+	        	{sWidth: '20%', sClass: 'wordwrap', bSortable: false},
 	        	{sWidth: null},
-	        	{sWidth: '2%'},
+	        	{sWidth: '3%'},
 	        	{sWidth: null, sClass: 'wordwrap'},
-	        	{sWidth: null},
-	        	{sWidth: null},
-	        	{sWidth: null},
-	        	{sWidth: null}
+	        	{sWidth: '3%', bSortable: false},
+	        	{sWidth: '4%', bSortable: false},
+	        	{sWidth: '3%', bSortable: false},
+	        	{sWidth: '4%', bSortable: false}
 	        ]
 	        sLengthMenu: '<select>'+
 	        	'<option value="10">10</option>'+

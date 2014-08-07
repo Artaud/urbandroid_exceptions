@@ -12,7 +12,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
     <br>
-    <table class="table table-striped display" id='assertions'>
+    <table class="table table-striped table-bordered display" id='assertions'>
       <thead>
         <tr>
           <th>Description</th>
@@ -20,10 +20,10 @@
           <th>User</th>
           <th>Count</th>
           <th>Last</th>
-          <th>Add occurence</th>
-          <th>Show</th>
-          <th>Edit</th>
-          <th>Destroy</th>
+          <th>Add occur</th>
+          <th>Show occur's</th>
+          <th>Edit assert</th>
+          <th>Destroy assert</th>
         </tr>
       </thead>
 
@@ -39,10 +39,10 @@
             Occurence.where(assertion_id: assertion.id).order(date: :desc).first.app_version %>
             <% end %>
           </td>
-          <td><%= link_to 'Add', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-info' %></td>
-          <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= assertion.id %>">Show</button></td>
-          <td><%= link_to 'Edit', edit_assertion_path(assertion) %></td>
-          <td><%= link_to 'Destroy', assertion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '+', new_occurence_path(:assertion_id => assertion.id), :class=>'btn btn-primary' %></td>
+          <td><button class='btn btn-info' data-toggle='modal' data-target="#myModal_<%= assertion.id %>">OO</button></td>
+          <td><%= link_to '✎', edit_assertion_path(assertion), class: 'btn btn-warning' %></td>
+          <td><%= link_to '×', assertion, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </tr>
 
 
