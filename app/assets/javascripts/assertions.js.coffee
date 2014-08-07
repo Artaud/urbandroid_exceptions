@@ -9,13 +9,13 @@ tab = ->
 	        aoColumns: [
 	        	{sWidth: null, sClass: 'wordwrap'},
 	        	{sWidth: null, sClass: 'wordwrap', bSortable: false},
-	        	{sWidth: '4%'},
-	        	{sWidth: '3%'},
-	        	{sWidth: '9%', sClass: 'wordwrap'},
-	        	{sWidth: '3%', bSortable: false},
-	        	{sWidth: '4%', bSortable: false},
-	        	{sWidth: '3%', bSortable: false},
-	        	{sWidth: '4%', bSortable: false}
+	        	{sWidth: null},
+	        	{sWidth: null},
+	        	{sWidth: null, sClass: 'wordwrap'},
+	        	{sWidth: null, bSortable: false},
+	        	{sWidth: null, bSortable: false},
+	        	{sWidth: null, bSortable: false},
+	        	{sWidth: null, bSortable: false}
 	        ]
 	        sLengthMenu: '<select>'+
 	        	'<option value="10">10</option>'+

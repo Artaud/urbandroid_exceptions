@@ -68,9 +68,10 @@
                   <li>
                     <%= occr.date %>
                     <%= occr.device_brand %>
-                    <%= occr.device_model %>
-                    <%= occr.operation_system_version %>
-                    <%= occr.app_version %>
+                    <%= occr.device_model %>,
+                    Android <%= occr.operation_system_version %>,
+                    Sleep <%= occr.app_version %>,
+                    Conversation #<%= occr.conversation %>
                   </li>
                 </ul>
                 <% end %>

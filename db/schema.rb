@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140721092615) do
+ActiveRecord::Schema.define(version: 20140807092909) do
 
   create_table "assertions", force: true do |t|
     t.text     "description"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140721092615) do
     t.integer  "excp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "conversation"
   end
 
   add_index "occurences", ["assertion_id"], name: "index_occurences_on_assertion_id"

@@ -58,11 +58,12 @@
                 <% Occurence.where(assertion_id: assertion.id).each do |occr| %>
                 <ul>
                   <li>
-                    <%= occr.date %>
+                    <%= occr.date %>,
                     <%= occr.device_brand %>
-                    <%= occr.device_model %>
-                    <%= occr.operation_system_version %>
-                    <%= occr.app_version %>
+                    <%= occr.device_model %>,
+                    Android <%= occr.operation_system_version %>,
+                    Sleep <%= occr.app_version %>,
+                    Conversation #<%= occr.conversation %>
                   </li>
                 </ul>
                 <% end %>

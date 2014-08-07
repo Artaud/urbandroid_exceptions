@@ -7,18 +7,18 @@ tab = ->
 	        bStateSave: false
 	        bAutoWidth: false
 	        aoColumns: [
-	        	{sWidth: '3%'},
-	        	{sWidth: null, sClass: 'wordwrap'},
-	        	{sWidth: '5%'},
-	        	{sWidth: '20%', sClass: 'wordwrap'},
-	        	{sWidth: '20%', sClass: 'wordwrap', bSortable: false},
 	        	{sWidth: null},
-	        	{sWidth: '3%'},
 	        	{sWidth: null, sClass: 'wordwrap'},
-	        	{sWidth: '3%', bSortable: false},
-	        	{sWidth: '4%', bSortable: false},
-	        	{sWidth: '3%', bSortable: false},
-	        	{sWidth: '4%', bSortable: false}
+	        	{sWidth: null},
+	        	{sWidth: null, sClass: 'wordwrap'},
+	        	{sWidth: null, sClass: 'wordwrap', bSortable: false},
+	        	{sWidth: null},
+	        	{sWidth: null},
+	        	{sWidth: null, sClass: 'wordwrap'},
+	        	{sWidth: null, bSortable: false},
+	        	{sWidth: null, bSortable: false},
+	        	{sWidth: null, bSortable: false},
+	        	{sWidth: null, bSortable: false}
 	        ]
 	        sLengthMenu: '<select>'+
 	        	'<option value="10">10</option>'+
