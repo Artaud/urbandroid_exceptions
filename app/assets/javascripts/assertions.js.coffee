@@ -7,8 +7,8 @@ tab = ->
 	        bStateSave: true
 	        bAutoWidth: false
 	        aoColumns: [
-	        	{sWidth: null, sClass: 'wordwrap'},
-	        	{sWidth: null, sClass: 'wordwrap', bSortable: false},
+	        	{sWidth: '17%', sClass: 'wordwrap'},
+	        	{sWidth: '17%', sClass: 'wordwrap', bSortable: false},
 	        	{sWidth: null},
 	        	{sWidth: null},
 	        	{sWidth: null, sClass: 'wordwrap'},
