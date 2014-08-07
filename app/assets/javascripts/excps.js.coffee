@@ -9,7 +9,7 @@ tab = ->
 	        aoColumns: [
 	        	{sWidth: null},
 	        	{sWidth: null, sClass: 'wordwrap'},
-	        	{sWidth: null},
+	        	{sWidth: null, sClass: 'wordwrap'},
 	        	{sWidth: '17%', sClass: 'wordwrap'},
 	        	{sWidth: '17%', sClass: 'wordwrap', bSortable: false},
 	        	{sWidth: null},
