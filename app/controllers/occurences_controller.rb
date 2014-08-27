@@ -69,6 +69,6 @@ class OccurencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def occurence_params
-      params.require(:occurence).permit(:date, :device_brand, :device_model, :operation_system_version, :app_version, :assertion_id, :excp_id)
+      params.require(:occurence).permit(:date, :device_brand, :device_model, :operation_system_version, :app_version, :assertion_id, :excp_id, :conversation)
     end
 end
